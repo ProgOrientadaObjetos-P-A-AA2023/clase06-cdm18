@@ -1,0 +1,14 @@
+Datos de Vendedor
+Nombre: Carlos Febres
+Edad: 20
+Salario mínimo: 240,50
+Número de autos: 5
+Pago mensual: 990,50
+
+Datos de Vendedor
+Nombre: Santos Nigger
+Edad: 17
+Salario mínimo: 150,00
+Número de autos: 16
+Pago mensual: 2550,00
+

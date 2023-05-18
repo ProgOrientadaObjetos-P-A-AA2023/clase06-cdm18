@@ -5,8 +5,10 @@
  */
 package paquete02;
 
+import java.util.Locale;
 import java.util.Scanner;
 import paquete01.LibretaCalificacion;
+import paquete04.Colegio;
 /**
  *
  * @author reroes
@@ -15,10 +17,17 @@ public class Ejecutor {
     public static void main(String[] args) {
         // listado de variables para ingreso de datos por teclado
         Scanner entrada = new Scanner(System.in);
+        entrada.useLocale(Locale.US);
         String nombreEstudiante;
+        String cole;
+        String ciudad;
         double [] calificacionesEstudiante;
         int numerocalificaciones;
         
+        System.out.println("Ingrese el nombre del colegio");
+        cole = entrada.nextLine ();
+        System.out.println("Ingrese la ciudad de su colegio");
+        ciudad = entrada.nextLine ();
         // Ingreso de valores por teclado
         System.out.println("Ingrese el nombre del estudiante");
         nombreEstudiante = entrada.nextLine();
@@ -27,7 +36,8 @@ public class Ejecutor {
         // con el numerocalificaciones se crea el objeto arreglo de
         // calificaciones tipo double
         calificacionesEstudiante = new double[numerocalificaciones];
-        
+        Colegio colegio = new Colegio (cole, ciudad);
+
         for (int i = 0; i < numerocalificaciones; i++) {
             System.out.printf("Ingrese calificación %d\n", i+1);
             calificacionesEstudiante[i] = entrada.nextDouble();
@@ -38,7 +48,8 @@ public class Ejecutor {
         // LibretaCalificacion
         LibretaCalificacion libreta = new LibretaCalificacion(
                 nombreEstudiante,
-                calificacionesEstudiante);
+                calificacionesEstudiante,
+                colegio);
         // Se llama a los métodos que realizan el calculo del
         // promedio y promedio cualitativo
         libreta.establecerPromedio();
