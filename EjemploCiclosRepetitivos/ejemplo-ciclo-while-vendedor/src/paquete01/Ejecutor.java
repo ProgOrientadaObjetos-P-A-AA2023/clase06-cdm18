@@ -5,6 +5,7 @@
  */
 package paquete01;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Ejecutor {
@@ -18,7 +19,7 @@ public class Ejecutor {
         boolean bandera;
         String opcion;
         Scanner entrada = new Scanner(System.in);
-
+        entrada.useLocale(Locale.US);
         // Inicio de proceso iterativo 
         bandera = true;
         while (bandera) { // bandera == true
@@ -30,7 +31,6 @@ public class Ejecutor {
             sMinino = entrada.nextDouble();
             System.out.println("Ingrese el número de autos vendidos");
             autos = entrada.nextInt();
-
             // con los datos ingresados se crea el objeto de tipo Vendedor
             Vendedor v = new Vendedor(nombre, edad, sMinino, 
                     autos);

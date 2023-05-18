@@ -5,12 +5,14 @@
  */
 package paquete02;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Ejecutor {
 
     public static void main(String[] args) {
         // variables para ingreso de datos
+
         String nombre;
         int edad;
         double sMinino;
@@ -18,6 +20,8 @@ public class Ejecutor {
         boolean bandera;
         String opcion;
         Scanner entrada = new Scanner(System.in);
+        entrada.useLocale(Locale.US);
+
         String cadenaFinal;
         // Inicio de proceso iterativo 
         bandera = true;
@@ -34,7 +38,7 @@ public class Ejecutor {
             autos = entrada.nextInt();
 
             // con los datos ingresados se crea el objeto de tipo Vendedor
-            Vendedor v = new Vendedor(nombre, edad, sMinino, 
+            Vendedor v = new Vendedor(nombre, edad, sMinino,
                     autos);
             v.calcularPagoMensual();
             cadenaFinal = String.format("%sDatos de Vendedor\n"
@@ -54,6 +58,7 @@ public class Ejecutor {
             opcion = entrada.nextLine();
             if (opcion.equals("n")) {
                 bandera = false;
+                System.out.println("");
             }
 
         }
